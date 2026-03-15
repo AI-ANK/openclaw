@@ -1,0 +1,35 @@
+{
+  "id": "accountability",
+  "name": "Accountability",
+  "description": "Psychology-inspired agent accountability framework with task board, scorecards, and evaluation.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dataDir": {
+        "type": "string",
+        "description": "Directory for accountability data (tasks, scorecards). Defaults to ~/.openclaw/accountability/"
+      },
+      "evaluationModel": {
+        "type": "string",
+        "description": "Model to use for judge evaluations (e.g. anthropic/claude-sonnet-4-20250514)"
+      },
+      "evaluationProvider": {
+        "type": "string",
+        "description": "Provider to use for judge evaluations (e.g. anthropic)"
+      },
+      "scorecardDecayDays": {
+        "type": "number",
+        "minimum": 1,
+        "maximum": 365,
+        "default": 30,
+        "description": "Number of days before older scorecard entries start decaying"
+      },
+      "selfCritiqueEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether agents must self-critique before marking tasks complete"
+      }
+    }
+  }
+}
